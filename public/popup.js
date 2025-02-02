@@ -9,7 +9,23 @@
     var desc = document.getElementById("description");
 
     // Extract file name from URL
-    const fileName = currentURL.substring(32, currentURL.length - 1) + ".mp4";
+    let fileName;
+
+    if(currentURL.includes("www.instagram.com/reels")) {
+        fileName = currentURL.substring(32, currentURL.length - 1) + ".mp4";
+    }
+    else if(currentURL.includes("www.instagram.com/p")) {
+        fileName = currentURL.substring(28, currentURL.length - 1) + ".mp4";
+    }
+    else if(currentURL.includes("www.youtube.com/watch?v=")) {
+        fileName = currentURL.substring(32, currentURL.length) + ".mp4";
+    }
+    else if(currentURL.includes("www.youtube.com/shorts/")) {
+        fileName = currentURL.substring(31, currentURL.length) + ".mp4";
+    }
+    else {
+        fileName = currentURL;
+    }
 
     // Debugging
     console.log(currentURL + fileName);
