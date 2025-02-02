@@ -24,18 +24,14 @@ header {
     text-align: center;
 }
 
-desc {
-    padding-top: 40px;
-    color: #50FFD8;
-    line-height: 1.6;
-    font-size: 5px;
-}
-
 .imageflex { 
     display: flex;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 12vh;
+    width: 100px;     
+    height: 100px;  
+    object-fit: contain;
 }
+
 .imageflexcontent { 
     margin-left: 5px;
     margin-top: 0;
@@ -43,4 +39,30 @@ desc {
     font-size: 20px;
     color: #50FFD8;
     font-weight: 800;
+}
+
+.resgood {
+    font-size: 20px;
+    font-weight: 500;
+    color:  #50FFD8;
+}
+
+.resbad {
+    font-size: 20px;
+    font-weight: 500;
+    color:  #FF0204;
+}
+
+.descgood {
+    font-size: 30px;
+    font-weight: 500;
+    color:  #50FFD8;
+    margin: 15px;
+}
+
+.descbad {
+    font-size: 30px;
+    font-weight: 500;
+    color:  #FF0204;
+    margin: 15px;
 }

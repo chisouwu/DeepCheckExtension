@@ -43,7 +43,24 @@
 
     if (response.ok) {
         // Display the result from the backend
-        desc.insertAdjacentHTML("afterend", `<p>Result: ${data.result}</p>`);
+        let res = data.result;
+        if (res == "FAKE"){
+            var img = document.getElementById('title');
+            img.src = 'DeepCheckLogoRed.png';
+            desc.classList.remove('descgood');
+            desc.classList.add('descbad');
+            desc.insertAdjacentHTML("afterend", '<p class="resbad"><b>Warning:</    b> the video is predicted to be a deepfake.</p>');
+
+        }
+        else {
+            if (res == "REAL") {
+            desc.insertAdjacentHTML("afterend", '<p class="resgood">The video is predicted to be real.</p>');
+            }
+            else {
+                desc.insertAdjacentHTML("afterend", `<p>Error: ${data.error}</p>`);
+            }
+        }
+        
     } else {
         desc.insertAdjacentHTML("afterend", `<p>Error: ${data.error}</p>`);
     }
