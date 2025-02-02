@@ -1,0 +1,46 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: "Vazirmatn", serif;
+    background: rgb(36,73,217);
+    background: linear-gradient(45deg, rgba(36,73,217,1) 0%, rgba(0,0,0,1) 60%);
+    color: #50FFD8;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Header Styling */
+header {
+    color: #000000;
+    padding: 10px 0;
+    text-align: center;
+}
+
+desc {
+    padding-top: 40px;
+    color: #50FFD8;
+    line-height: 1.6;
+    font-size: 5px;
+}
+
+.imageflex { 
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.imageflexcontent { 
+    margin-left: 5px;
+    margin-top: 0;
+    font-family: "Vazirmatn", serif;
+    font-size: 20px;
+    color: #50FFD8;
+    font-weight: 800;
+}

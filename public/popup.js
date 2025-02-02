@@ -1,19 +1,17 @@
 // Extension FrontEnd
 // Extract URL
-console.log("test1");
 ( async () =>{
     const [tab] = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
     const currentURL = tab.url;
 
     console.log("test2");
     // Display URL in the page
-    var h = document.getElementById("test");
-    h.insertAdjacentHTML("afterend", "<h2>" + currentURL + " </h2>");
+    var desc = document.getElementById("description");
 
     // Extract file name from URL
     const fileName = currentURL.substring(32, currentURL.length - 1) + ".mp4";
 
-    // Testing
+    // Debugging
     console.log(currentURL + fileName);
 
     // Send POST request to the Python backend
@@ -29,8 +27,8 @@ console.log("test1");
 
     if (response.ok) {
         // Display the result from the backend
-        h.insertAdjacentHTML("afterend", `<h3>Result: ${data.result}</h3>`);
+        desc.insertAdjacentHTML("afterend", `<p>Result: ${data.result}</p>`);
     } else {
-        h.insertAdjacentHTML("afterend", `<h3>Error: ${data.error}</h3>`);
+        desc.insertAdjacentHTML("afterend", `<p>Error: ${data.error}</p>`);
     }
 })();
